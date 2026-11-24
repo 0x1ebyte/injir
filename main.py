@@ -53,12 +53,16 @@ if __name__ == "__main__":
 
     #table
     count_columns = []
-    for i in range(len(data[0]["object_properties"])):
+    for i in range(len(data[0]["object_properties"])+1):
         count_columns.append(i)
-    object_table = ttk.Treeview(root, columns=data[0]["object_properties"], show="headings")
-    for i in range(len(data[0]["object_properties"])):
-        object_table.heading(i, text=data[0]["object_properties"][i])
-        object_table.column(i, width=50)
+    object_table = ttk.Treeview(root, columns=count_columns, show="headings")
+    for i in range(len(count_columns)):
+        if i == 0:
+            object_table.heading(0, text="name")
+            object_table.column(0, width=50)
+        else:
+            object_table.heading(i, text=data[0]["object_properties"][i-1])
+            object_table.column(i, width=50)
     object_table.grid(column=0,columnspan=2, row=4, sticky=NSEW, padx=5, pady=2)
 
     root.mainloop()
