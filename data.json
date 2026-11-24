@@ -1,0 +1,26 @@
+[
+    {
+        "app_name":"Injir", "version":"0.0.pre-alpha"
+    },
+
+    [
+        {
+            "object_properties":["width", "life", "pi", "anything"],
+            "object_type":["int", "string", "float", "any_type"]
+        },
+        { 
+            "n1":
+            {
+                "width":10,
+                "life":"good",
+                "pi":3.14
+            },
+            "n2":
+            {
+                "width":10,
+                "life":"good",
+                "anything":"any_type"
+            }
+        }
+    ]
+]
